@@ -1,24 +1,17 @@
 <?php
-//Copy this file to config.inc.php and make changes to that file to customize your configuration.
-
-$config = array(
-    'servers' => array(
-        array(
-            'name' => '35', // Optional name.
+$config = [
+    'servers' => [
+        [
+            'name' => '35',
             'host' => '127.0.0.1',
             'port' => 6379,
+            'auth' => '123456',
+//            'db' => 2,             // Optional database number, see http://redis.io/commands/select
+//            'databases' => 2,             // Optional number of databases (prevents use of CONFIG command).
             'filter' => '*',
             'scheme' => 'tcp', // Optional. Connection scheme. 'tcp' - for TCP connection, 'unix' - for connection by unix domain socket
             'path' => '', // Optional. Path to unix domain socket. Uses only if 'scheme' => 'unix'. Example: '/var/run/redis/redis.sock'
-
-            // Optional Redis authentication.
-            'auth' => '123456' // Warning: The password is sent in plain-text to the Redis server.
-        ),
-
-        /*array(
-          'host' => 'localhost',
-          'port' => 6380
-        ),*/
+        ],
 
         /*array(
           'name'      => 'local db 2',
@@ -33,28 +26,23 @@ $config = array(
           'keys'      => false,         // Use the old KEYS command instead of SCAN to fetch all keys for this server (default uses config default).
           'scansize'  => 1000           // How many entries to fetch using each SCAN command for this server (default uses config default).
         ),*/
-    ),
+    ],
 
 
     'seperator' => ':',
 
-
     // Uncomment to show less information and make phpRedisAdmin fire less commands to the Redis server. Recommended for a really busy Redis server.
     //'faster' => true,
 
-
-    // Uncomment to enable HTTP authentication
-    /*'login' => array(
-      // Username => Password
-      // Multiple combinations can be used
-      'admin' => array(
-        'password' => 'adminpassword',
-      ),
-      'guest' => array(
-        'password' => '',
-        'servers'  => array(1) // Optional list of servers this user can access.
-      )
-    ),*/
+//    'login' => [
+//        'admin' => [
+//            'password' => '123456',
+//        ],
+//        'guest' => [
+//            'password' => '123456',
+//            'servers' => [1],
+//        ],
+//    ],
 
     // Use HTML form/cookie-based auth instead of HTTP Basic/Digest auth
     'cookie_auth' => false,
@@ -80,6 +68,4 @@ $config = array(
 
     // How many entries to fetch using each SCAN command.
     'scansize' => 1000
-);
-
-?>
+];
