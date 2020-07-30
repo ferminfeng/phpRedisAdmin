@@ -1,7 +1,5 @@
-.idea
 /includes/config.inc.php
-*.phar
-vendor
 
-# IDEs metadata
+.DS_Store
+.idea
 /nbproject/
