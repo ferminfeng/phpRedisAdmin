@@ -1,5 +1,5 @@
 .idea
-./includes/config.inc.php
+/includes/config.inc.php
 *.phar
 vendor
 
